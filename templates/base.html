@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 반응형 웹 -->
+    <meta name="viewport"
+          content="width=divice-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css'%}">
+    <!-- 개발자가 만든 pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+  <title>Title</title>
+</head>
+<body>
+    <!-- 내비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <a class="navbar-brand" href="{% url 'pybo:index' %}">로고</a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collaps"
+                data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">로그인</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 기본 템플릿 안에 삽입될 내용 -->
+    {% block content %}
+    {% endblock %}
+    <!-- jQquery 자바스크립트 적용 -->
+    <script src="{% static 'jquery-3.6.3.min.js' %}"></script>
+
+    <!-- bootstrap 자바스크립트 적용 -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>
